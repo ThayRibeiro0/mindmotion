@@ -5,7 +5,6 @@
     "strict": true,
     "esModuleInterop": true
     } ,
-  "extends": "../tsconfig.base.json",
   "include": ["src"]
   }
   
