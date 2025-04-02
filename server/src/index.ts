@@ -1,5 +1,8 @@
 import express from "express";
 import cors from "cors";
+import meditationRoutes from './routes/meditation';
+
+app.use('/api/meditations', meditationRoutes);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
