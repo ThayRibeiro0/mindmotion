@@ -9,7 +9,7 @@ app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.json());
 
 // Rotas de exemplo
-app.get("/", (req, res) => {
+app.get("/", (_req: any, res: { send: (arg0: string) => void; }) => {
   res.send("API is running 🚀");
 });
 
