@@ -1,18 +1,31 @@
-import express from "express";
-import cors from "cors";
+import express from 'express';
+import cors from 'cors';
+import { sequelize } from './config/database.js'; // Certifique-se de usar a extensão `.js` com ESM
+import authRoutes from './routes/auth.js';
+import meditationRoutes from './routes/meditation.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Configurar CORS para aceitar requisições do front-end
 app.use(cors({ origin: "http://localhost:5173" }));
-app.use(express.json());
+app.use(express.json()); // Para processar JSON no corpo da requisição
 
-// Rotas de exemplo
-app.get("/", (_req: any, res: { send: (arg0: string) => void; }) => {
-  res.send("API is running 🚀");
-});
+// Rotas
+app.use('/api/auth', authRoutes);
+app.use('/api', meditationRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// Iniciar o servidor e conectar ao banco de dados
+const startServer = async () => {
+  try {
+    await sequelize.authenticate();
+    console.log('Conexão com o banco de dados estabelecida com sucesso!');
+    await sequelize.sync(); // Sincroniza os modelos com o banco
+    app.listen(PORT, () => {
+      console.log(`Servidor rodando na porta ${PORT}`);
+    });
+  } catch (err) {
+    console.error('Erro ao conectar ao banco de dados:', err);
+  }
+};
+
+startServer();

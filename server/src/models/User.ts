@@ -9,6 +9,21 @@ interface UserAttributes {
   password: string;
 }
 
+interface DataTypes {
+  STRING: string;
+}
+
+sequelize.define('model', {
+  column: DataTypes.INTEGER
+})
+
+sequelize.define('model', {
+  uuid: {
+    type: DataTypes.UUID,
+    defaultValue: DataTypes.UUIDV1,
+    primaryKey: true
+  }
+}) 
 interface UserCreationAttributes extends Optional<UserAttributes, 'id'> {}
 
 class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
@@ -19,7 +34,11 @@ class User extends Model<UserAttributes, UserCreationAttributes> implements User
 
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
-    comparePassword: ((password: string) => Promise<boolean>) | undefined;
+
+  // Definir corretamente a tipagem para o método de comparação de senha
+  public comparePassword(password: string): Promise<boolean> {
+    return bcrypt.compare(password, this.password);
+  }
 }
 
 User.init({
@@ -51,8 +70,4 @@ User.beforeCreate(async (user) => {
   user.password = await bcrypt.hash(user.password, salt);
 });
 
-User.prototype.comparePassword = function (password: string) {
-  return bcrypt.compare(password, this.password);
-};
-
-module.exports = User;
+export default User;
