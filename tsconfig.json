@@ -1,21 +1,18 @@
 {
   "compilerOptions": {
     "target": "ES6", 
-    "module": "CommonJS",  
+    "module": "CommonJS",
+    "moduleResolution": "node",
     "skipLibCheck": true,
     "outDir": "./dist",
     "rootDir": "./",
-    "jsx": "react-jsx", 
-    "allowImportingTsExtensions": true,
-    "noEmit": true,    
-
+    "jsx": "react-jsx",
+    "baseUrl": ".", 
     "allowJs": true,
     "checkJs": true,
-
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -26,7 +23,7 @@
     "useUnknownInCatchVariables": true
   },
   "include": [
-    "server/src/**/*", 
+    "server/src/**/*",
     "client/src/**/*"
   ],
   "exclude": ["node_modules"]

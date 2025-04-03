@@ -39,7 +39,8 @@
     "@types/sequelize": "^4.28.20",
     "concurrently": "^9.1.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "vite": "^6.2.5"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
