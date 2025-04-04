@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@models/*": ["src/models/*"],
+      "@routes/*": ["src/routes/*"]
+    },
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
@@ -23,7 +28,6 @@
   "include": ["src"],
   "exclude": ["node_modules"],
   "typeRoots": ["./node_modules/@types", "./src/types"],
-  "baseUrl": ".",
   "paths": {
     "@components/*": ["src/components/*"],
     "@utils/*": ["src/utils/*"]

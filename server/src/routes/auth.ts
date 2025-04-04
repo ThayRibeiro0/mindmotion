@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 
 const router = express.Router();
 
-// Rota de Signup
+// Route of Signup
 router.post('/signup', async (req: express.Request, res: express.Response): Promise<void> => {
   try {
     const { username, email, password } = req.body;
@@ -16,7 +16,7 @@ router.post('/signup', async (req: express.Request, res: express.Response): Prom
       return;
     }
 
-    // Cria um novo usuário
+    // Create a new user
     await User.create({ username, email, password });
     res.status(201).json({ message: 'Usuário criado com sucesso!' });
   } catch (err) {
@@ -25,23 +25,23 @@ router.post('/signup', async (req: express.Request, res: express.Response): Prom
   }
 });
 
-// Rota de Login
+// Route of Login
 router.post('/login',  async (req: express.Request, res: express.Response): Promise<void> => {
   try {
     const { email, password } = req.body;
 
-    // Verifica se o usuário existe
+    // Verify if the user exists
     const user = await User.findOne({ where: { email } });
     if (!user) {
       res.status(400).json({ message: 'Usuário não encontrado!' });
     }
 
-    // Verifica se o usuário foi encontrado e se o método comparePassword está definido
+    // Verify if the user has the method comparePassword
     if (!user || typeof user.comparePassword !== 'function') {
       res.status(400).json({ message: 'Usuário ou método inválido!' });
     }
 
-    // Compara a senha
+    // Compare the password
     if (!user) {
       res.status(400).json({ message: 'Usuário não encontrado!' });
       return;
@@ -57,7 +57,7 @@ router.post('/login',  async (req: express.Request, res: express.Response): Prom
       res.status(400).json({ message: 'Senha incorreta!' });
     }
 
-    // Gera um JWT Token
+    // Create a JWT token
     const token = jwt.sign({ userId: user.id }, 'your-secret-key', {
       expiresIn: '1h',
     });

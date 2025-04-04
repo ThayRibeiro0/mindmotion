@@ -5,6 +5,7 @@
   "hints": {
     "typescript-config/is-valid": "off",
     "typescript-config/consistent-casing": "off",
-    "disown-opener": "off"
+    "disown-opener": "off",
+    "button-type": "off"
   }
 }

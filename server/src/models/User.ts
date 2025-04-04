@@ -35,7 +35,7 @@ class User extends Model<UserAttributes, UserCreationAttributes> implements User
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 
-  // Definir corretamente a tipagem para o método de comparação de senha
+  // Definition of the correct type for the password comparison method
   public comparePassword(password: string): Promise<boolean> {
     return bcrypt.compare(password, this.password);
   }
@@ -64,7 +64,7 @@ User.init({
   modelName: 'User',
 });
 
-// Método para criptografar a senha antes de salvar o usuário
+// Method to encrypt the password before saving the user
 User.beforeCreate(async (user) => {
   const salt = await bcrypt.genSalt(10);
   user.password = await bcrypt.hash(user.password, salt);
