@@ -6,6 +6,7 @@
     "typescript-config/is-valid": "off",
     "typescript-config/consistent-casing": "off",
     "disown-opener": "off",
-    "button-type": "off"
+    "button-type": "off",
+    "no-inline-styles": "off"
   }
 }
