@@ -1,13 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ES6", 
+    "baseUrl": ".",
+    "paths": {
+      "@models/*": ["server/src/models/*"],
+      "@routes/*": ["server/src/routes/*"]
+    },
+    "target": "ES6",
     "module": "CommonJS",
     "moduleResolution": "node",
     "skipLibCheck": true,
     "outDir": "./dist",
     "rootDir": "./",
     "jsx": "react-jsx",
-    "baseUrl": ".", 
     "allowJs": true,
     "checkJs": true,
     "esModuleInterop": true,
