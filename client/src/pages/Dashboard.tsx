@@ -1,16 +1,16 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProgressChart from '../components/ProgressChart';
 
 const Dashboard = () => {
   const [quote, setQuote] = useState('');
-  const [stats, setStats] = useState({ total: 0, todayCount: 0, streak: 0, logs: [] });
+  const [stats, setStats] = useState<{ total: number; todayCount: number; streak: number; logs: any[] }>({ total: 0, todayCount: 0, streak: 0, logs: [] });
 
   useEffect(() => {
-    axios.get('/api/quotes').then(res => {
+    axios.get<{ q: string; a: string }>('/api/quotes').then(res => {
       setQuote(`${res.data.q} — ${res.data.a}`);
     });
-    axios.get('/api/meditations/stats').then(res => {
+    axios.get<{ total: number; todayCount: number; streak: number; logs: any[] }>('/api/meditations/stats').then(res => {
       setStats(res.data);
     });
   }, []);

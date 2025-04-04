@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import BreathingTimer from '../components/BreathingTimer';
 import MoodSelector from '../components/MoodSelector';
 

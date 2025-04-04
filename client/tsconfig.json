@@ -3,24 +3,28 @@
     "baseUrl": ".",
     "paths": {
       "@models/*": ["src/models/*"],
-      "@routes/*": ["src/routes/*"]
+      "@routes/*": ["src/routes/*"],
+      "@components/*": ["src/components/*"],
+      "@utils/*": ["src/utils/*"]
     },
-    "target": "ES2020",
+    "outDir": "../dist/client",
+    "rootDir": "./",
+    "target": "es5",
+    "lib": ["dom", "esnext"],
+    "jsx": "react",
+    // "noUnusedLocals": false, 
+    // "noUnusedParameters": false,
+    "moduleResolution": "node",
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "es2020",  
+    "module": "es2020",
     "skipLibCheck": true,
-    /* Bundler mode */
-    "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "composite": true,
     "emitDeclarationOnly": true,
-    "jsx": "react-jsx",
-
-    /* Linting */
-    "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
@@ -28,12 +32,5 @@
   "include": ["src"],
   "exclude": ["node_modules"],
   "typeRoots": ["./node_modules/@types", "./src/types"],
-  "paths": {
-    "@components/*": ["src/components/*"],
-    "@utils/*": ["src/utils/*"]
-  },
-  // "extends": "./tsconfig.paths.json",
-  "references": [],
-  "composite": true,
-  "emitDeclarationOnly": false
+  "references": []
 }

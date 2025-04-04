@@ -6,12 +6,9 @@
       "@models/*": ["src/models/*"],
       "@routes/*": ["src/routes/*"]
     },
-    /* Modules */
-    "rootDir": "src" /* Specify the root folder within your source files. */,
-
-    /* Emit */
-    "outDir": "dist" /* Specify an output folder for all emitted files. */
-    // "noEmitOnError": true /* Disable emitting files if any type checking errors are reported. */
+    "jsx": "react-jsx",
+    "outDir": "../dist/server", 
+    "rootDir": "./",
   },
   "include": ["src"],
   "typeRoots": ["./node_modules/@types", "./src/types"]
