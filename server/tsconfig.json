@@ -2,6 +2,10 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "paths": {
+      "@models/*": ["src/models/*"],
+      "@routes/*": ["src/routes/*"]
+    },
     /* Modules */
     "rootDir": "src" /* Specify the root folder within your source files. */,
 
