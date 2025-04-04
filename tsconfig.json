@@ -1,11 +1,30 @@
 {
-   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
+  "compilerOptions": {
+    "target": "ES6", 
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "jsx": "react-jsx",
+    "baseUrl": ".", 
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "esModuleInterop": true
-    } ,
-  "extends": "../tsconfig.base.json",
-  "include": ["src"]
-  }
-  
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "useUnknownInCatchVariables": true
+  },
+  "include": [
+    "server/src/**/*",
+    "client/src/**/*"
+  ],
+  "exclude": ["node_modules"]
+}
