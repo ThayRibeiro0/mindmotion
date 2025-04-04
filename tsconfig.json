@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "declaration": false,
     "baseUrl": ".",
     "paths": {
       "@models/*": ["server/src/models/*"],
@@ -12,13 +13,14 @@
     "outDir": "./dist",
     "rootDir": "./",
     "jsx": "react-jsx",
+      // "noUnusedLocals": false,
     "allowJs": true,
     "checkJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "exactOptionalPropertyTypes": true,

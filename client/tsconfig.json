@@ -7,9 +7,13 @@
       "@components/*": ["src/components/*"],
       "@utils/*": ["src/utils/*"]
     },
+    "outDir": "../dist/client",
+    "rootDir": "./",
     "target": "es5",
     "lib": ["dom", "esnext"],
     "jsx": "react",
+    // "noUnusedLocals": false, 
+    // "noUnusedParameters": false,
     "moduleResolution": "node",
     "strict": true,
     "allowSyntheticDefaultImports": true,
@@ -28,7 +32,5 @@
   "include": ["src"],
   "exclude": ["node_modules"],
   "typeRoots": ["./node_modules/@types", "./src/types"],
-  "references": [],
-  "composite": true,
-  "emitDeclarationOnly": false
+  "references": []
 }

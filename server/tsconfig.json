@@ -6,8 +6,9 @@
       "@models/*": ["src/models/*"],
       "@routes/*": ["src/routes/*"]
     },
-    "rootDir": "src",
-    "outDir": "dist"
+    "jsx": "react-jsx",
+    "outDir": "../dist/server", 
+    "rootDir": "./",
   },
   "include": ["src"],
   "typeRoots": ["./node_modules/@types", "./src/types"]
