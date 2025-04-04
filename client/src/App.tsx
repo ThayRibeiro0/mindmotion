@@ -1,12 +1,14 @@
 import React from 'react';
-import Home from './pages/Home';  // Certifique-se de que o caminho está correto
+import Home from './pages/Home';
+import Header from './components/Header';
 
-const App: React.FC = () => {
+function App() {
   return (
-    <div className="App">
+    <>
+      <Header />
       <Home />
-    </div>
+    </>
   );
-};
+}
 
 export default App;

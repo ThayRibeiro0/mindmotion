@@ -1,5 +1,4 @@
 import React from 'react';
-import './Home.css'; 
 
 const Home: React.FC = () => {
   return (
@@ -17,40 +16,44 @@ const Home: React.FC = () => {
 
       {/* Seção de Benefícios */}
       <section className="benefits">
-        <h2>Why Choose Us?</h2>
+        <h2>Why Choose MindMotion?</h2>
         <div className="benefit-items">
           <div className="benefit-item">
-            <h3>Personalized Yoga</h3>
-            <p>Tailored sessions for your needs and goals.</p>
+            <h3>Inspiring Quotes</h3>
+            <p>Find daily doses of wisdom and motivation to center your mind.</p>
           </div>
           <div className="benefit-item">
-            <h3>Expert Instructors</h3>
-            <p>Learn from certified yoga and meditation experts.</p>
+            <h3>Soothing Soundscapes</h3>
+            <p>Immerse yourself in calming melodies and ambient sounds for deep relaxation.</p>
           </div>
           <div className="benefit-item">
-            <h3>Flexible Scheduling</h3>
-            <p>Practice anytime, anywhere with flexible schedules.</p>
+            <h3>Guided Meditations</h3>
+            <p>Follow expert-led sessions to reduce stress and enhance mindfulness.</p>
           </div>
         </div>
       </section>
 
       {/* Seção de Testemunhos */}
       <section className="testimonials">
-        <h2>What Our Users Say</h2>
+        <h2>What Our Users Say About MindMotion</h2>
         <div className="testimonial-item">
-          <p>"MindMotion has changed my life. The sessions are transformative!"</p>
+          <p>"MindMotion helps me start my day with peace and inspiration. The quotes are perfect!"</p>
           <h4>- Jane Doe</h4>
         </div>
         <div className="testimonial-item">
-          <p>"I feel more relaxed and focused after just a few sessions."</p>
-          <h4>- John Smith</h4>
+          <p>"The soundscapes are incredibly calming, and I love discovering new quotes. A wonderful app!"</p>
+          <h4>- David K.</h4>
+        </div>
+        <div className="testimonial-item">
+          <p>"I've found a greater sense of calm and focus thanks to MindMotion's beautiful songs and thoughtful quotes."</p>
+          <h4>- Emily L.</h4>
         </div>
       </section>
 
       {/* Seção de Call to Action */}
       <section className="cta">
-        <h2>Ready to Begin Your Journey?</h2>
-        <button className="cta-btn">Join Now</button>
+        <h2>Ready to Find Your Inner Peace?</h2>
+        <button className="cta-btn">Explore MindMotion Now</button>
       </section>
     </div>
   );

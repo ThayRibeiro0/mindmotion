@@ -7,6 +7,12 @@
     "typescript-config/consistent-casing": "off",
     "disown-opener": "off",
     "button-type": "off",
-    "no-inline-styles": "off"
+    "no-inline-styles": "off",
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
+      }
+    ]
   }
 }
