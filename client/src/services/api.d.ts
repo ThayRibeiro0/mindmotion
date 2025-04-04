@@ -1,1 +1,2 @@
-export declare const api: Axios.AxiosInstance;
+import type { AxiosInstance } from 'axios';
+export declare const api: AxiosInstance;
