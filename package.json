@@ -1,5 +1,5 @@
 {
-  
+
   "name": "mindmotion",
   "version": "1.0.0",
   "private": true,
@@ -20,7 +20,7 @@
     "dev:client": "cd client && npm run dev"
   },
   "repository": {
-    "type": "git",
+    "type": "git",``
     "url": "git+https://github.com/ThayRibeiro0/mindmotion.git"
   },
   "keywords": [],
