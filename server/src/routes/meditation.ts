@@ -1,29 +1,14 @@
 import express from 'express';
-import { MeditationLog } from '../models/MeditationLog'; // adjust path as needed
-import auth from '../middleware/auth'; // your JWT middleware
+import authMiddleware from '../middleware/authMiddleware';
 
 const router = express.Router();
 
-router.get('/stats', auth, async (req, res) => {
-  try {
-    const logs = await MeditationLog.findAll({
-      where: { user_id: req.user.id },
-      order: [['created_at', 'DESC']]
-    });
-
-    const today = new Date().toISOString().split('T')[0];
-    const todayCount = logs.filter(log =>
-      new Date(log.created_at).toISOString().split('T')[0] === today
-    ).length;
-
-    res.json({
-      total: logs.length,
-      todayCount,
-      logs
-    });
-  } catch (err) {
-    res.status(500).json({ message: 'Could not fetch stats' });
-  }
+// Rota protegida para logs de meditação
+router.post('/meditation/log', authMiddleware, (req, res) => {
+  const { meditationData } = req.body;
+    
+  console.log('Received meditation data:', meditationData);
+  res.json({ message: 'Log de meditação salvo com sucesso!', data: meditationData });
 });
 
 export default router;
