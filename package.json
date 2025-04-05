@@ -13,7 +13,9 @@
     "start": "node --loader ts-node/esm server/src/index.ts",
     "start:dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "test": "jest",
-    "build": "cd client && npm run build",
+    "build": "concurrently \"npm run build:server\" \"npm run build:client\"",
+    "build:server": "cd server && npm run build", 
+    "build:client": "cd client && npm run build",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "nodemon --exec \"node --loader ts-node/esm\" server/src/index.ts",
     "dev:client": "cd client && npm run dev"
