@@ -1,4 +1,4 @@
-import { Line } from 'react-chartjs-2';
+import("chart.js");
 import {
   Chart as ChartJS,
   LineElement,
@@ -10,6 +10,7 @@ import {
   Legend
 } from 'chart.js';
 import React from 'react';
+import { Line } from 'react-chartjs-2';
 
 ChartJS.register(
   LineElement,

@@ -1,7 +1,6 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const BreathingTimer:React.FC = (): JSX.Element => {
+const BreathingTimer: React.FC = (): JSX.Element => {
   const [timeLeft, setTimeLeft] = useState<number>(30);
   const [isActive, setIsActive] = useState<boolean>(false);
 
@@ -9,7 +8,7 @@ const BreathingTimer:React.FC = (): JSX.Element => {
     let timer: ReturnType<typeof setInterval> | null = null;
     if (isActive && timeLeft > 0) {
       timer = setInterval(() => {
-        setTimeLeft((prevTime) => prevTime - 1);
+        setTimeLeft((prevTime: number) => prevTime - 1); // Decrease time left by 1 second
       }, 1000);
     } else if (timeLeft === 0) {
       setIsActive(false);
