@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ProgressChart from '../components/ProgressChart';
 
-const Dashboard = () => {
+const Dashboard: React.FC = () => {
   const [quote, setQuote] = useState('');
   const [stats, setStats] = useState<{ total: number; todayCount: number; streak: number; logs: any[] }>({ total: 0, todayCount: 0, streak: 0, logs: [] });
 
