@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function MoodSelector() {
+const MoodSelector: React.FC = () => {
   const [mood, setMood] = useState('');
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
