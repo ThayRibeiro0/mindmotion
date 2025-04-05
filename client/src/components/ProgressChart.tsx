@@ -30,7 +30,7 @@ interface ProgressChartProps {
   logs: Log[];
 }
 
-const ProgressChart: React.FC<ProgressChartProps> = ({ logs }) => {
+const ProgressChart: React.FC<ProgressChartProps> = ({ logs }): JSX.Element => {
   const data = {
     labels: logs.map(log => new Date(log.created_at).toLocaleDateString()),
     datasets: [

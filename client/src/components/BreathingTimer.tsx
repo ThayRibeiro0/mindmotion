@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-const BreathingTimer: React.FC = () => {
+const BreathingTimer:React.FC = (): JSX.Element => {
   const [timeLeft, setTimeLeft] = useState<number>(30);
   const [isActive, setIsActive] = useState<boolean>(false);
 
