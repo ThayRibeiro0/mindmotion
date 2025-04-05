@@ -7,8 +7,8 @@
       "@components/*": ["src/components/*"],
       "@utils/*": ["src/utils/*"]
     },
-    "outDir": "../dist/client",
-    "rootDir": "./",
+    "outDir": "./dist/client",
+    "rootDir": "./src",
     "target": "ES2020",
     "lib": ["dom", "esnext"],
     "jsx": "react-jsx",
