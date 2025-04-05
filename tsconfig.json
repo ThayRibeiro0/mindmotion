@@ -10,7 +10,7 @@
     "target": "ES2020",
     "moduleResolution": "node16",
     "skipLibCheck": true,
-    "outDir": "./dist",
+    "outDir": "./dist/client",
     "rootDir": "./",
     "jsx": "react-jsx",
       // "noUnusedLocals": false,
