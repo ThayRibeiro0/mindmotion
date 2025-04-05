@@ -1,6 +1,6 @@
 import React from 'react';
-import BreathingTimer from '../components/BreathingTimer';
-import MoodSelector from '../components/MoodSelector';
+import BreathingTimer from '../components/BreathingTimer.tsx';
+import MoodSelector from '../components/MoodSelector.tsx';
 
 const Meditate: React.FC = () => {
   return (

@@ -1,6 +1,6 @@
 import express from 'express';
-import authMiddleware from '../middleware/authMiddleware';
-import MeditationLog from '../models/Meditation';
+import authMiddleware from '../middleware/authMiddleware.js';
+import MeditationLog from '../models/Meditation.js';
 
 const router = express.Router();
 declare global {

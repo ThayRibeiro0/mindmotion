@@ -1,7 +1,7 @@
 import './index.css'; // Certifique-se que o caminho está correto
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import App from './App.tsx'; // Certifique-se que o caminho está correto
 
 const rootElement = document.getElementById('root');
 if (rootElement) {
