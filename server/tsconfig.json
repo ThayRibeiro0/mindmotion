@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",                      // Diretório base para resolver módulos
-    "outDir": "../dist/server",                   // Diretório de saída para os arquivos compilados
+    "outDir": "./server",                   // Diretório de saída para os arquivos compilados
     "rootDir": "./src",                   // Diretório de entrada para os arquivos de código-fonte
     "module": "NodeNext",                 // Especifica o tipo de módulo (NodeNext para compatibilidade com ES modules)
     "target": "ES2020",                   // Alvo de compilação
