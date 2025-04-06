@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsc -p tsconfig.json",
+    "build:server": "tsc --project server/tsconfig.json",
     "start": "ts-node server/src/index.ts",
     "dev": "nodemon src/index.ts",
     "dev:server": "nodemon index.ts"
