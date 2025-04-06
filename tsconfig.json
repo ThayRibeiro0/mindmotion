@@ -1,39 +1,13 @@
 {
   "compilerOptions": {
-    "declaration": false,
-    "baseUrl": ".",
-    "paths": {
-      "@models/*": ["server/src/models/*"],
-      "@routes/*": ["server/src/routes/*"]
-    },
-    "module": "NodeNext",
     "target": "ES2020",
-    "moduleResolution": "NodeNext",
-    "skipLibCheck": true,
-    "outDir": "./dist",
-    "rootDir": "./",
-    "jsx": "react-jsx",
-      // "noUnusedLocals": false,
-    "allowJs": true,
-    "checkJs": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "baseUrl": ".",
+    "paths": {},
     "strict": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "exactOptionalPropertyTypes": true,
-    "noImplicitReturns": true,
-    "noImplicitOverride": true,
-    "useUnknownInCatchVariables": true
-  },
-  "ts-node": {
-    "esm": true
-  },
-  "include": [
-    "server/src/**/*",
-    "client/src/**/*"
-  ],
-  "exclude": ["node_modules"]
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
 }
