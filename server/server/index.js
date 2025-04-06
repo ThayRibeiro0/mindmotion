@@ -2,14 +2,14 @@ import express from 'express';
 import cors from 'cors';
 import { sequelize } from './config/database.js';
 import authRoutes from './routes/auth.js';
-import meditationRoutes from './routes/meditation.js';
+import meditationRoutes from './routes/meditation.js'; // Ensure this exports an Express router
 const app = express();
 const PORT = process.env.PORT || 5000;
 app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.json()); // to acess the req.body
 // Routes to the application
 app.use('/api/auth', authRoutes);
-app.use('/api', meditationRoutes);
+app.use('/api/meditation', meditationRoutes);
 // Initialize the database connection and start the server
 const startServer = async () => {
     try {

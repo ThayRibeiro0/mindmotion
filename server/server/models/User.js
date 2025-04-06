@@ -12,7 +12,7 @@ sequelize.define('model', {
     }
 });
 class User extends Model {
-    // Definition of the correct type for the password comparison method
+    // Definir corretamente a tipagem para o método de comparação de senha
     comparePassword(password) {
         return bcrypt.compare(password, this.password);
     }
@@ -39,7 +39,7 @@ User.init({
     sequelize,
     modelName: 'User',
 });
-// Method to encrypt the password before saving the user
+// Método para criptografar a senha antes de salvar o usuário
 User.beforeCreate(async (user) => {
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(user.password, salt);
