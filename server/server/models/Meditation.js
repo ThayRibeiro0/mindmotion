@@ -1,27 +1,32 @@
-import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/database.js';
-class Meditation extends Model {
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const sequelize_1 = require("sequelize");
+const database_js_1 = __importDefault(require("../config/database.js"));
+class Meditation extends sequelize_1.Model {
 }
 Meditation.init({
     user_id: {
-        type: DataTypes.UUID,
+        type: sequelize_1.DataTypes.UUID,
         allowNull: false,
     },
     duration: {
-        type: DataTypes.INTEGER,
+        type: sequelize_1.DataTypes.INTEGER,
         allowNull: false,
     },
     mood: {
-        type: DataTypes.STRING,
+        type: sequelize_1.DataTypes.STRING,
         allowNull: true,
     },
     notes: {
-        type: DataTypes.TEXT,
+        type: sequelize_1.DataTypes.TEXT,
         allowNull: true,
     },
 }, {
-    sequelize,
+    sequelize: database_js_1.default,
     modelName: 'Meditation',
     tableName: 'meditations',
 });
-export default Meditation;
+exports.default = Meditation;
