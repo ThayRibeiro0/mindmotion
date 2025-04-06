@@ -1,13 +1,18 @@
-import express from 'express';
-import authMiddleware from '../middleware/authMiddleware.js';
-import Meditation from '../models/Meditation.js';
-const meditationRouter = express.Router();
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const authMiddleware_js_1 = __importDefault(require("../middleware/authMiddleware.js"));
+const Meditation_js_1 = __importDefault(require("../models/Meditation.js"));
+const meditationRouter = express_1.default.Router();
 // Rota protegida para criar log de meditação
-meditationRouter.post('/meditation/log', authMiddleware, async (req, res) => {
+meditationRouter.post('/meditation/log', authMiddleware_js_1.default, async (req, res) => {
     try {
         const { duration, mood, notes } = req.body;
         const user_id = req.user?.id;
-        const newLog = Meditation.create({ user_id, duration, mood, notes });
+        const newLog = Meditation_js_1.default.create({ user_id, duration, mood, notes });
         res.json({ message: 'Log created successfully!', data: newLog });
     }
     catch (error) {
@@ -16,10 +21,10 @@ meditationRouter.post('/meditation/log', authMiddleware, async (req, res) => {
     }
 });
 // Rota protegida para buscar logs do usuário
-meditationRouter.get("/meditation/logs", authMiddleware, async (req, res) => {
+meditationRouter.get("/meditation/logs", authMiddleware_js_1.default, async (req, res) => {
     try {
         const user_id = req.user?.id ?? null;
-        const logs = Meditation.findAll({ where: { user_id } });
+        const logs = Meditation_js_1.default.findAll({ where: { user_id } });
         res.json(logs);
     }
     catch (error) {
@@ -27,4 +32,4 @@ meditationRouter.get("/meditation/logs", authMiddleware, async (req, res) => {
         res.status(500).json({ error: "Erro ao buscar os logs de meditação." });
     }
 });
-export default meditationRouter;
+exports.default = meditationRouter;

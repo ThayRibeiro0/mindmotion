@@ -2,10 +2,9 @@
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "jest",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc",
     "build:server": "tsc --project server/tsconfig.json",
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",

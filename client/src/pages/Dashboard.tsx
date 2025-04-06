@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import ProgressChart from '../components/ProgressChart.tsx';
+import ProgressChart from '../components/ProgressChart.js';
 
 const Dashboard: React.FC = (): JSX.Element => {
   const [quote, setQuote] = useState('');
