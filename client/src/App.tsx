@@ -1,6 +1,6 @@
 import React from 'react';
-import Home from './pages/Home.tsx';
-import Header from './components/Header.tsx';
+import Home from './pages/Home';
+import Header from './components/Header';
 
 const App: React.FC = () => {
   return (
