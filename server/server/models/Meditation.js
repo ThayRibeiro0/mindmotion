@@ -1,18 +1,10 @@
-import { DataTypes } from "sequelize";
-import { sequelize } from "../config/database.js";
-const MeditationLog = sequelize.define("MeditationLog", {
-    id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
-        primaryKey: true,
-    },
+import { Model, DataTypes } from 'sequelize';
+import sequelize from '../config/database.js';
+class Meditation extends Model {
+}
+Meditation.init({
     user_id: {
         type: DataTypes.UUID,
-        allowNull: false,
-    },
-    date: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
         allowNull: false,
     },
     duration: {
@@ -21,11 +13,15 @@ const MeditationLog = sequelize.define("MeditationLog", {
     },
     mood: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     notes: {
         type: DataTypes.TEXT,
         allowNull: true,
     },
+}, {
+    sequelize,
+    modelName: 'Meditation',
+    tableName: 'meditations',
 });
-export default MeditationLog;
+export default Meditation;

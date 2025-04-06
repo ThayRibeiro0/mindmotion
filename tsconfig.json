@@ -8,7 +8,7 @@
     },
     "module": "NodeNext",
     "target": "ES2020",
-    "moduleResolution": "node16",
+    "moduleResolution": "NodeNext",
     "skipLibCheck": true,
     "outDir": "./dist",
     "rootDir": "./",
