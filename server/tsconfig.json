@@ -1,20 +1,14 @@
 {
-  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "CommonJS",
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "baseUrl": ".",
-    "paths": {
-      "@models/*": ["src/models/*"],
-      "@routes/*": ["src/routes/*"]
-    },
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "strict": true,
-    "skipLibCheck": true
+    "baseUrl": ".",                      // Diretório base para resolver módulos
+    "outDir": "./dist",                   // Diretório de saída para os arquivos compilados
+    "rootDir": "./src",                   // Diretório de entrada para os arquivos de código-fonte
+    "module": "NodeNext",                 // Especifica o tipo de módulo (NodeNext para compatibilidade com ES modules)
+    "target": "ES2020",                   // Alvo de compilação
+    "moduleResolution": "NodeNext",       // Resolução de módulos compatível com Node.js e ES
+    "jsx": "react-jsx",                   // Para projetos React
+    "strict": true                        // Habilitar verificação estrita para reduzir erros de tipo
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*"],                // Incluir todos os arquivos da pasta src
+  "exclude": ["node_modules"]             // Excluir node_modules da compilação
 }
