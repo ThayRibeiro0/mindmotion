@@ -4,7 +4,7 @@ Mindmotion is a web application that allows you to track your moods and emotions
 
 ## Features
 
-- User registration and login
+- User registration and login system
 - Mood tracking and analysis
 - Mood insights and recommendations
 - Integration with external APIs

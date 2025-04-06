@@ -17,7 +17,7 @@
     "build:client": "cd client && npm run build",
     "build:server": "cd server && npm run build",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
-    "dev:server": "ts-node-dev --respawn --transpile-only server/src/index.ts",
+    "dev:server": "node --respawn --transpile-only server/src/index.ts",
     "dev:client": "cd client && npm run dev"
   },
   "repository": {
