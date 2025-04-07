@@ -7,7 +7,7 @@
     "target": "ES2020",                   // Alvo de compilação
     "moduleResolution": "NodeNext",       // Resolução de módulos compatível com Node.js e ES
     "jsx": "react-jsx",                   // Para projetos React
-    "strict": true                        // Habilitar verificação estrita para reduzir erros de tipo
+    "strict": true,                     // Habilitar verificação estrita para reduzir erros de tipo
   },
   "include": ["src/**/*"],                // Incluir todos os arquivos da pasta src
   "exclude": ["node_modules"]             // Excluir node_modules da compilação
