@@ -1,26 +1,14 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@models/*": ["src/models/*"],
-      "@routes/*": ["src/routes/*"],
-      "@components/*": ["src/components/*"],
-      "@utils/*": ["src/utils/*"]
-    },
-    "outDir": "./dist",               // <- output da build
-    "rootDir": "./src",               // <- código-fonte
-    "target": "ES2020",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "jsx": "react-jsx",
-    "moduleResolution": "Node",
+    "jsx": "react-jsx", 
+    "lib": ["DOM", "ESNext"],
     "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "ESNext",
     "strict": true,
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": ["src"]
 }
