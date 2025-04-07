@@ -15,7 +15,7 @@
     "test": "jest",
     "build:client": "cd client && npm run build",
     "build:server": "cd server && npm run build",
-    "build": "npm run build:client && npm run build:server",
+    "build": "tsc",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "node --respawn --transpile-only server/src/index.ts",
     "dev:client": "cd client && npm run dev"
