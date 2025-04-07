@@ -1,18 +1,39 @@
-// tsconfig.json (na raiz)
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "module": "esnext",
-    "target": "es6",
-    "moduleResolution": "node",
-    "lib": ["dom", "esnext"],
-    "esModuleInterop": true,
+    "declaration": false,
+    "baseUrl": ".",
+    "paths": {
+      "@models/*": ["server/src/models/*"],
+      "@routes/*": ["server/src/routes/*"]
+    },
+    "module": "NodeNext",
+    "target": "ES2020",
+    "moduleResolution": "NodeNext",
     "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "rootDir": "./",
+    "jsx": "react-jsx",
+      // "noUnusedLocals": false,
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "noEmit": true
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "useUnknownInCatchVariables": true
   },
-  "include": ["server/src"]
+  "ts-node": {
+    "esm": true
+  },
+  "include": [
+    "server/src/**/*",
+    "client/src/**/*"
+  ],
+  "exclude": ["node_modules"]
 }

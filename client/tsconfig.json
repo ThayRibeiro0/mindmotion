@@ -1,14 +1,36 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx", 
-    "lib": ["DOM", "ESNext"],
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "target": "ESNext",
+    "baseUrl": ".",
+    "paths": {
+      "@models/*": ["src/models/*"],
+      "@routes/*": ["src/routes/*"],
+      "@components/*": ["src/components/*"],
+      "@utils/*": ["src/utils/*"]
+    },
+    "outDir": "./client",
+    "rootDir": "./",
+    "target": "ES2020",
+    "lib": ["dom", "esnext"],
+    "jsx": "react-jsx",
+    // "noUnusedLocals": false, 
+    // "noUnusedParameters": false,
+    "moduleResolution": "NodeNext",
     "strict": true,
-    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "useDefineForClassFields": true,
+    "module": "NodeNext",
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "composite": true,
+    "emitDeclarationOnly": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "typeRoots": ["./node_modules/@types", "./src/types"],
+  "references": []
 }
