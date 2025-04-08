@@ -6,7 +6,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node dist/server/src/index.js",
+    "start": "node dist/index.js",
     "start:dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "test:db": "psql -U postgres -d mindmotion_db -c 'SELECT 1;'",
     "build": "tsc",

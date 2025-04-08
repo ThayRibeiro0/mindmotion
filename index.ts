@@ -1,4 +1,4 @@
-import { startServer } from './server/src/index';
+import { startServer } from './server/src/index.js';
 
 const createAccessServer = async () => {
   await startServer();

@@ -33,7 +33,8 @@
   },
   "include": [
     "server/src/**/*",
-    "client/src/**/*"
+    "client/src/**/*",
+    "index.ts"
   ],
   "exclude": ["node_modules"]
 }
