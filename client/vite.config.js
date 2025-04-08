@@ -7,6 +7,9 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: './src/main.tsx',
+    },
+    server: {
+      port: 3000
     }
   }
 });
