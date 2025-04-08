@@ -13,7 +13,7 @@
     "start": "node dist/index.js",
     "start:dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "test:db": "psql -U postgres -d mindmotion_db -c 'SELECT 1;'",
-    "build": "tsc && npm install react react-dom && npm install --save-dev @types/react @types/react-dom && npm run build:client && npm run build:server && npm run build",
+    "build": "tsc",
     "build:client": "cd client && npm run build",
     "build:server": "cd server && npm run build",
     "dev": "vite --port 3000",
