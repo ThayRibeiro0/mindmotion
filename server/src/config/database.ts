@@ -1,11 +1,6 @@
 import { Sequelize } from 'sequelize';
 import dotenv from 'dotenv';
 dotenv.config();
-import express from 'express';
-
-const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 export const sequelize = new Sequelize(
   process.env.DB_NAME || 'mindmotion_db', 
