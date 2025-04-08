@@ -19,7 +19,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/meditation', meditationRoutes);
 
 // Optional: Serve the index.html for all other routes to enable client-side routing
-app.get('*', (req, res) => {
+app.get('*', (_req, res) => {
   res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
 });
 
