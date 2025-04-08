@@ -19,9 +19,10 @@ const Header: React.FC = () => {
       </div>
 
       <nav className={`nav-links ${isMenuOpen ? "open" : ""}`}>
-        <a href="#">Home</a>
-        <a href="#">Login</a>
-        <a href="#">Contact</a>
+        <a href="/home">Home</a>
+        <a href="/login">Login</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/contact">Contact</a>
       </nav>
 
       <div className="hamburger" onClick={toggleMenu}>

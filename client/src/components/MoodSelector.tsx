@@ -3,22 +3,33 @@ import React, { useState } from 'react';
 const MoodSelector: React.FC = () => {
   const [mood, setMood] = useState('');
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setMood(event.target.value);
+  const handleMoodClick = (selectedMood: string) => {
+    setMood(selectedMood);
   };
 
+  const moodOptions = [
+    { value: 'happy', label: 'Happy', emoji: '😊' },
+    { value: 'sad', label: 'Sad', emoji: '😢' },
+    { value: 'calm', label: 'Calm', emoji: '🧘‍♀️' },
+    { value: 'stressed', label: 'Stressed', emoji: '🤯' },
+    { value: 'excited', label: 'Excited', emoji: '🤩' }, // Added another option
+  ];
+
   return (
-    <div>
-      <h2>Mood Selector</h2>
-      <label htmlFor="mood-select">Select your mood:</label>
-      <select id="mood-select" value={mood} onChange={handleChange}>
-        <option value="">--Select your mood--</option>
-        <option value="happy">Happy</option>
-        <option value="sad">Sad</option>
-        <option value="calm">Calm</option>
-        <option value="stressed">Stressed</option>
-      </select>
-      {mood && <p>You are feeling: {mood}</p>}
+    <div className="mood-selector-container">
+      <h2>How are you feeling today?</h2>
+      <div className="mood-buttons-container">
+        {moodOptions.map((option) => (
+          <button
+            key={option.value}
+            className={`mood-button ${mood === option.value ? 'selected' : ''}`}
+            onClick={() => handleMoodClick(option.value)}
+          >
+            {option.emoji} {option.label}
+          </button>
+        ))}
+      </div>
+      {mood && <p className="selected-mood-text">You are feeling: {moodOptions.find(opt => opt.value === mood)?.emoji} {mood}</p>}
     </div>
   );
 }
