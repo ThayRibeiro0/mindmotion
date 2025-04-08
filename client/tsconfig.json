@@ -10,8 +10,6 @@
     "target": "ES2020",
     "lib": ["dom", "esnext"],
     "jsx": "react",
-    // "noUnusedLocals": false, 
-    // "noUnusedParameters": false,
     "moduleResolution": "NodeNext",
     "strict": true,
     "allowSyntheticDefaultImports": true,
