@@ -6,7 +6,7 @@
     "module": "NodeNext",                 // Especifica o tipo de módulo (NodeNext para compatibilidade com ES modules)
     "target": "ES2020",                   // Alvo de compilação
     "moduleResolution": "NodeNext",       // Resolução de módulos compatível com Node.js e ES
-    "jsx": "react-jsx",                   // Para projetos React
+    "jsx": "react",                   // Para projetos React
     "strict": true,                     // Habilitar verificação estrita para reduzir erros de tipo
   },
   "include": ["src/**/*"],                // Incluir todos os arquivos da pasta src

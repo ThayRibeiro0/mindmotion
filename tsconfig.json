@@ -12,7 +12,7 @@
     "skipLibCheck": true,
     "outDir": "./dist",
     "rootDir": "./",
-    "jsx": "react-jsx",
+    "jsx": "react",
       // "noUnusedLocals": false,
     "allowJs": true,
     "checkJs": true,
