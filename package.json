@@ -12,7 +12,7 @@
     "build": "tsc",
     "build:client": "cd client && npm run build",
     "build:server": "cd server && npm run build",
-    "dev": "vite --port 3000",
+    "dev": "vite --port 10000",
     "dev:server": "node server/src/index.ts",
     "dev:client": "cd client && npm run dev"
   },
