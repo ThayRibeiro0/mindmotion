@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",   // Habilita JSX para React 17+
+    "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "target": "ES2020",
     "lib": ["dom", "esnext"],
@@ -9,7 +10,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]
