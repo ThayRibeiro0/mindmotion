@@ -1,43 +1,20 @@
 {
-  "name": "server",
+  "name": "mindmotion-server",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "build": "tsc",
-    "build:server": "tsc --project server/tsconfig.json",
-    "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
-    "dev:server": "nodemon index.ts"
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "@types/react-chartjs-2": "^2.5.7",
-    "axios": "^1.8.4",
-    "bcrypt": "^5.1.1",
-    "bcryptjs": "^3.0.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
     "express": "^5.1.0",
+    "sequelize": "^6.37.7",
     "jsonwebtoken": "^9.0.2",
-    "pg": "^8.14.1",
-    "pg-hstore": "^2.3.4",
-    "react": "^19.1.0",
-    "react-chartjs-2": "^5.3.0",
-    "react-dom": "^19.1.0",
-    "sequelize": "^6.37.7"
+    "bcrypt": "^5.1.1",
+    "pg": "^8.14.1"
   },
   "devDependencies": {
-    "@types/axios": "^0.9.36",
-    "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.1",
-    "@types/jsonwebtoken": "^9.0.9",
-    "@types/node": "^22.14.0",
-    "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.1",
+    "typescript": "^5.8.3",
     "nodemon": "^3.1.9"
   }
 }
