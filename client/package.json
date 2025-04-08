@@ -2,6 +2,7 @@
   "name": "mindmotion-client",
   "version": "1.0.0",
   "scripts": {
+    "start": "npm run build && node dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
