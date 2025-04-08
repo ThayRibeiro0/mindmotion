@@ -1,10 +1,20 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { useState } from 'react';
+import React, { useState } from 'react';
 const MoodSelector = () => {
     const [mood, setMood] = useState('');
     const handleChange = (event) => {
         setMood(event.target.value);
     };
-    return (_jsxs("div", { children: [_jsx("h2", { children: "Mood Selector" }), _jsx("label", { htmlFor: "mood-select", children: "Select your mood:" }), _jsxs("select", { id: "mood-select", value: mood, onChange: handleChange, children: [_jsx("option", { value: "", children: "--Select your mood--" }), _jsx("option", { value: "happy", children: "Happy" }), _jsx("option", { value: "sad", children: "Sad" }), _jsx("option", { value: "calm", children: "Calm" }), _jsx("option", { value: "stressed", children: "Stressed" })] }), mood && _jsxs("p", { children: ["You are feeling: ", mood] })] }));
+    return (React.createElement("div", null,
+        React.createElement("h2", null, "Mood Selector"),
+        React.createElement("label", { htmlFor: "mood-select" }, "Select your mood:"),
+        React.createElement("select", { id: "mood-select", value: mood, onChange: handleChange },
+            React.createElement("option", { value: "" }, "--Select your mood--"),
+            React.createElement("option", { value: "happy" }, "Happy"),
+            React.createElement("option", { value: "sad" }, "Sad"),
+            React.createElement("option", { value: "calm" }, "Calm"),
+            React.createElement("option", { value: "stressed" }, "Stressed")),
+        mood && React.createElement("p", null,
+            "You are feeling: ",
+            mood)));
 };
 export default MoodSelector;

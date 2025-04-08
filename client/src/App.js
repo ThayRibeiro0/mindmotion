@@ -1,7 +1,9 @@
-import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "react/jsx-runtime";
+import React from 'react';
 import Home from './pages/Home.js';
 import Header from './components/Header.js';
 const App = () => {
-    return (_jsxs(_Fragment, { children: [_jsx(Header, {}), _jsx(Home, {})] }));
+    return (React.createElement(React.Fragment, null,
+        React.createElement(Header, null),
+        React.createElement(Home, null)));
 };
 export default App;

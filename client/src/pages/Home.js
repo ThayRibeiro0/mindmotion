@@ -1,5 +1,36 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import React from "react";
 const Home = () => {
-    return (_jsxs("div", { className: "home-container", children: [_jsx("section", { className: "hero", children: _jsxs("div", { className: "hero-content", children: [_jsx("h1", { className: "hero-title", children: "Welcome to MindMotion" }), _jsx("p", { className: "hero-description", children: "Your journey to a calm and centered mind begins here" }), _jsx("button", { className: "cta-btn", children: "Get Started" })] }) }), _jsxs("section", { className: "benefits", children: [_jsx("h2", { children: "Why Choose MindMotion?" }), _jsxs("div", { className: "benefit-items", children: [_jsxs("div", { className: "benefit-item", children: [_jsx("h3", { children: "Inspiring Quotes" }), _jsx("p", { children: "Find daily doses of wisdom and motivation to center your mind." })] }), _jsxs("div", { className: "benefit-item", children: [_jsx("h3", { children: "Soothing Soundscapes" }), _jsx("p", { children: "Immerse yourself in calming melodies and ambient sounds for deep relaxation." })] }), _jsxs("div", { className: "benefit-item", children: [_jsx("h3", { children: "Mood Insights & Tracking" }), _jsx("p", { children: "Track your mood, get personalized insights, and stay motivated with expert guidance." })] })] })] }), _jsxs("section", { className: "testimonials", children: [_jsx("h2", { children: "What Our Users Say About MindMotion" }), _jsxs("div", { className: "testimonial-item", children: [_jsx("p", { children: "\"MindMotion helps me start my day with peace and inspiration. The quotes are perfect!\"" }), _jsx("h4", { children: "- Jane Doe" })] }), _jsxs("div", { className: "testimonial-item", children: [_jsx("p", { children: "\"The soundscapes are incredibly calming, and I love discovering new quotes. A wonderful app!\"" }), _jsx("h4", { children: "- David K." })] }), _jsxs("div", { className: "testimonial-item", children: [_jsx("p", { children: "\"I never knew how much I needed this app until I started using it. It has transformed my daily routine.\"" }), _jsx("h4", { children: "- Sarah L." })] })] }), _jsxs("section", { className: "cta", children: [_jsx("h2", { children: "Ready to Find Your Inner Peace?" }), _jsx("button", { className: "cta-btn", children: "Explore MindMotion Now" })] })] }));
+    return (React.createElement("div", { className: "home-container" },
+        React.createElement("section", { className: "hero" },
+            React.createElement("div", { className: "hero-content" },
+                React.createElement("h1", { className: "hero-title" }, "Welcome to MindMotion"),
+                React.createElement("p", { className: "hero-description" }, "Your journey to a calm and centered mind begins here"),
+                React.createElement("button", { className: "cta-btn" }, "Get Started"))),
+        React.createElement("section", { className: "benefits" },
+            React.createElement("h2", null, "Why Choose MindMotion?"),
+            React.createElement("div", { className: "benefit-items" },
+                React.createElement("div", { className: "benefit-item" },
+                    React.createElement("h3", null, "Inspiring Quotes"),
+                    React.createElement("p", null, "Find daily doses of wisdom and motivation to center your mind.")),
+                React.createElement("div", { className: "benefit-item" },
+                    React.createElement("h3", null, "Soothing Soundscapes"),
+                    React.createElement("p", null, "Immerse yourself in calming melodies and ambient sounds for deep relaxation.")),
+                React.createElement("div", { className: "benefit-item" },
+                    React.createElement("h3", null, "Mood Insights & Tracking"),
+                    React.createElement("p", null, "Track your mood, get personalized insights, and stay motivated with expert guidance.")))),
+        React.createElement("section", { className: "testimonials" },
+            React.createElement("h2", null, "What Our Users Say About MindMotion"),
+            React.createElement("div", { className: "testimonial-item" },
+                React.createElement("p", null, "\"MindMotion helps me start my day with peace and inspiration. The quotes are perfect!\""),
+                React.createElement("h4", null, "- Jane Doe")),
+            React.createElement("div", { className: "testimonial-item" },
+                React.createElement("p", null, "\"The soundscapes are incredibly calming, and I love discovering new quotes. A wonderful app!\""),
+                React.createElement("h4", null, "- David K.")),
+            React.createElement("div", { className: "testimonial-item" },
+                React.createElement("p", null, "\"I never knew how much I needed this app until I started using it. It has transformed my daily routine.\""),
+                React.createElement("h4", null, "- Sarah L."))),
+        React.createElement("section", { className: "cta" },
+            React.createElement("h2", null, "Ready to Find Your Inner Peace?"),
+            React.createElement("button", { className: "cta-btn" }, "Explore MindMotion Now"))));
 };
 export default Home;
