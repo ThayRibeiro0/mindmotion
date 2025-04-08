@@ -11,8 +11,8 @@
     "moduleResolution": "NodeNext",
     "skipLibCheck": true,
     "outDir": "./dist",
-    "rootDir": "./",
-    "jsx": "react",
+    "rootDir": "./src",
+    "jsx": "react-jsx",
       // "noUnusedLocals": false,
     "allowJs": true,
     "checkJs": true,
@@ -31,8 +31,6 @@
   "ts-node": {
     "esm": true
   },
-  "include": [
-    ["src/**/*"]
-  ],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }
