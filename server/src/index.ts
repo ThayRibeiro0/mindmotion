@@ -15,7 +15,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/meditation', meditationRoutes);
 
 // Função para iniciar o servidor
-const startServer = async () => {
+const startServer = async (_p0: { port: string | number; host: string; cors: { origin: string; credentials: boolean; }; }) => {
   try {
     await sequelize.authenticate();
     console.log('Conexão com o banco de dados estabelecida com sucesso!');
