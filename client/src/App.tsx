@@ -14,9 +14,6 @@ const App: React.FC = () => {
       <Home />
       <Dashboard />
       <Meditate />
-      <BreathingTimer />
-      <MoodSelector />
-      <ProgressChart logs={[]} />
     </>
   );
 }

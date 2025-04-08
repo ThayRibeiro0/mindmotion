@@ -29,11 +29,11 @@ const BreathingTimer: React.FC = (): JSX.Element => {
 
   return (
     <div>
-      <h2>Breathing Timer</h2>
+      <h2 className="breathing-timer-title">Breathing Timer</h2>
       {timeLeft > 0 ? (
-        <p>Time remaining: {timeLeft} seconds</p>
+        <p className="breathing-timer-remaining">Time remaining: {timeLeft} seconds</p>
       ) : (
-        <p>Breathing exercise complete!</p>
+        <p className="breathing-timer-complete">Breathing exercise complete!</p>
       )}
       <div>
         {!isActive && timeLeft === 30 && (

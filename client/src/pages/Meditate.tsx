@@ -4,10 +4,10 @@ import MoodSelector from '../components/MoodSelector.js';
 
 const Meditate: React.FC = () => {
   return (
-    <div className="meditate-page1">
+    <div className="meditate-page">
       <h1>Meditate Page</h1>
-      <BreathingTimer />
       <MoodSelector />
+      <BreathingTimer />
     </div>
   );
 };

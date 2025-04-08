@@ -560,6 +560,166 @@ button:focus-visible {
 }
 
 /* ===================== */
+/* MEDITATION SECTION    */
+/* ===================== */
+/* Meditate.css */
+.meditate-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  padding: 40px;
+  background-color: #f4f7f6;
+  min-height: 100vh;
+  box-sizing: border-box;
+  text-align: center; /* Center text within the container */
+}
+
+.meditate-page h1 {
+  color: #386641;
+  margin-bottom: 40px;
+  font-size: 3em;
+  font-weight: 800;
+}
+
+/* Breathing Timer Styles (No Alignment Changes Needed) */
+.breathing-timer-container {
+  background-color: #e8f5e9;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  width: 80%;
+  max-width: 600px;
+}
+
+.breathing-timer-title {
+  font-size: 2.5em;
+  color: rgb(226, 43, 226);
+  margin-bottom: 20px;
+}
+.breathing-timer-remaining {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 25px;
+}
+.breathing-timer-container h2 {
+  color: black;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.breathing-timer-container p {
+  font-size: 1.2em;
+  color: black;
+  margin-bottom: 25px;
+}
+
+.breathing-timer-container .timer-controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.breathing-timer-container button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.breathing-timer-container button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+}
+
+.breathing-timer-container button:hover {
+  opacity: 0.9;
+}
+
+.breathing-timer-container button:nth-child(1) {
+  background-color: #28a745;
+  color: white;
+}
+
+.breathing-timer-container button:nth-child(1):hover {
+  background-color: #218838;
+}
+
+.breathing-timer-container button:nth-child(2) {
+  background-color: #dc3545;
+  color: white;
+}
+
+.breathing-timer-container button:nth-child(2):hover {
+  background-color: #c82333;
+}
+
+.breathing-timer-container p:last-of-type {
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Mood Selector Styles with Potential Alignment Improvement */
+.mood-selector-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center content vertically within the container if needed */
+  background-color: #f1f8e9;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  width: 80%;
+  max-width: 600px;
+  text-align: center; /* Ensure text inside is centered */
+}
+
+.mood-selector-container h2 {
+  color: #386641;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.mood-selector-container .mood-buttons-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+  justify-content: center; /* Center the button grid horizontally */
+}
+
+.mood-selector-container .mood-button {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #e0e0e0;
+  color: #333;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.mood-selector-container .mood-button:hover {
+  background-color: #d0d0d0;
+}
+
+.mood-selector-container .mood-button.selected {
+  background-color: #007bff;
+  color: black;
+}
+
+.mood-selector-container .selected-mood-text {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #28a745;
+}
+
+/* ===================== */
 /* MOBILE MENU           */
 /* ===================== */
 .hamburger {
