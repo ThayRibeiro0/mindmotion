@@ -1,36 +1,33 @@
-// src/config/database.ts
-import { Sequelize } from 'sequelize';
-import dotenv from 'dotenv';
+import express from 'express';
+import cors from 'cors';
+import { sequelize } from './config/database.js';
+import authRoutes from './routes/auth.js';
+import meditationRoutes from './routes/meditation.js'; // Ensure this exports an Express router
 
-dotenv.config(); // Carrega as variáveis do arquivo .env
+const app = express();
+const PORT = process.env.PORT || 5000;
 
-// Verifica se as variáveis de ambiente essenciais estão definidas
-const requiredEnvVars = ['DB_HOST', 'DB_USER', 'DB_PASS', 'DB_NAME', 'DB_PORT'];
-requiredEnvVars.forEach((varName) => {
-  if (!process.env[varName]) {
-    throw new Error(`The ${varName} environment variable is not set.`);
+app.use(cors({ origin: "http://localhost:5173" }));
+app.use(express.json()); // to acess the req.body
+
+// Routes to the application
+app.use('/api/auth', authRoutes);
+app.use('/api/meditation', meditationRoutes);
+
+// Initialize the database connection and start the server
+const startServer = async () => {
+  try {
+    await sequelize.authenticate();
+    console.log('Conexão com o banco de dados estabelecida com sucesso!');
+    await sequelize.sync(); // sicronyze the database
+    app.listen(PORT, () => {
+      console.log(`Servidor rodando na porta ${PORT}`);
+    });
+  } catch (err) {
+    console.error('Erro ao conectar ao banco de dados:', err);
   }
-});
+};
 
-const sequelize = new Sequelize({
-  dialect: 'postgres',
-  host: process.env.DB_HOST!,
-  username: process.env.DB_USER!,
-  password: process.env.DB_PASS!,
-  database: process.env.DB_NAME!,
-  port: Number(process.env.DB_PORT!),
-  logging: false, // Desativa o logging, se não necessário
-  dialectOptions: process.env.NODE_ENV === 'production' ? {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false
-    }
-  } : {}
-});
+startServer();
 
-// Testa a conexão
-sequelize.authenticate()
-  .then(() => console.log('Conection to database established successfully.'))
-  .catch((err) => console.error('Error connecting to the database:', err));
-
-export default sequelize;
+export default app;
