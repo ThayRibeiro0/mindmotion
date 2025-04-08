@@ -2,18 +2,18 @@
   "compilerOptions": {
     "declaration": false,
     "baseUrl": ".",
+    "types": ["node"],
     "paths": {
       "@models/*": ["server/src/models/*"],
       "@routes/*": ["server/src/routes/*"]
     },
-    "module": "NodeNext",
-    "target": "ES2020",
-    "moduleResolution": "NodeNext",
+    "module": "node16",
+    "target": "ESNext",
+    "moduleResolution": "node16",
     "skipLibCheck": true,
     "outDir": "./dist",
     "rootDir": "./",
     "jsx": "react",
-      // "noUnusedLocals": false,
     "allowJs": true,
     "checkJs": true,
     "esModuleInterop": true,

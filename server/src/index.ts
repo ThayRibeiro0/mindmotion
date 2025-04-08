@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { sequelize } from './config/database.js';
+import sequelize from './config/database.js';
 import authRoutes from './routes/auth.js';
 import meditationRoutes from './routes/meditation.js'; // Ensure this exports an Express router
 
