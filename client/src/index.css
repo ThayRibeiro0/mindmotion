@@ -720,6 +720,124 @@ button:focus-visible {
 }
 
 /* ===================== */
+/* Contact Section       */
+/* ===================== */
+/* Contact.css */
+.contact-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f7f6;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.contact-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+}
+
+.contact-container h1 {
+  color: #386641;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+}
+
+.contact-container p {
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.contact-details {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.contact-details h2 {
+  color: #386641;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.contact-details p {
+  margin-bottom: 10px;
+}
+
+.contact-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: white;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Make button full width on smaller screens */
+  max-width: 200px; /* Limit button width on larger screens */
+  margin: 20px auto 0; /* Center the button */
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 30px;
+  }
+
+  .contact-container h1 {
+    font-size: 2em;
+  }
+
+  .contact-details h2 {
+    font-size: 1.6em;
+  }
+}
+
+
+
+/* ===================== */
 /* MOBILE MENU           */
 /* ===================== */
 .hamburger {

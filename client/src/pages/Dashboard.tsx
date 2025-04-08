@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import UserAvatar from '../assets/avatar.jpg';
-import { CalendarIcon } from '@heroicons/react/24/outline';
 
 interface Stats {
   totalMeditatedTime: string;
@@ -31,6 +30,12 @@ interface ForismaticResponse {
   quoteText: string;
   quoteAuthor: string;
   quoteLink: string;
+}
+
+declare global {
+  interface Window {
+    processJSON?: (data: { quoteText: string; quoteAuthor: string; quoteLink: string }) => void;
+  }
 }
 
 const Dashboard: React.FC = (): JSX.Element => {
@@ -98,11 +103,13 @@ const Dashboard: React.FC = (): JSX.Element => {
           );
           // Process the responses to extract sound names and IDs (which can be used for playback via their API or embedding)
           const newRecommendations: SoundRecommendation[] = [
-            ...(ambientResponse.data.results || []).slice(0, 2).map((sound: any) => ({
+            ...(Array.isArray((ambientResponse.data as { results: { name: string; user: { username: string }; id: number }[] }).results) 
+              ? (ambientResponse.data as { results: { name: string; user: { username: string }; id: number }[] }).results 
+              : []).slice(0, 2).map((sound) => ({
               name: sound.name,
               source: `https://freesound.org/people/${sound.user.username}/sounds/${sound.id}/`, // Example link
             })),
-            ...(natureResponse.data.results || []).slice(0, 2).map((sound: any) => ({
+            ...(Array.isArray((natureResponse.data as { results: any[] }).results) ? (natureResponse.data as { results: any[] }).results : []).slice(0, 2).map((sound: any) => ({
               name: sound.name,
               source: `https://freesound.org/people/${sound.user.username}/sounds/${sound.id}/`, // Example link
             })),
