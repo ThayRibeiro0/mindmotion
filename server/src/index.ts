@@ -1,33 +1,19 @@
-import express from 'express';
-import cors from 'cors';
-import { sequelize } from './config/database.js';
-import authRoutes from './routes/auth.js';
-import meditationRoutes from './routes/meditation.js'; // Ensure this exports an Express router
+// src/config/database.js
+import { Sequelize } from 'sequelize';
 
-const app = express();
-const PORT = process.env.PORT || 5000;
+export const sequelize = new Sequelize({
+  dialect: 'postgres',
+  host: process.env.DB_HOST || 'localhost',
+  username: process.env.DB_USER || 'postgres',
+  password: process.env.DB_PASS || 'teste',
+  database: process.env.DB_NAME || 'mindmotion_db',
+  port: Number(process.env.DB_PORT) || 5432,
+  logging: false, // Disable logging if you don't need it
+});
 
-app.use(cors({ origin: "http://localhost:5173" }));
-app.use(express.json()); // to acess the req.body
+// You can also handle any connection issues in this file if needed
+sequelize.authenticate()
+  .then(() => console.log('Database connected!'))
+  .catch((err) => console.error('Database connection error:', err));
 
-// Routes to the application
-app.use('/api/auth', authRoutes);
-app.use('/api/meditation', meditationRoutes);
-
-// Initialize the database connection and start the server
-const startServer = async () => {
-  try {
-    await sequelize.authenticate();
-    console.log('Conexão com o banco de dados estabelecida com sucesso!');
-    await sequelize.sync(); // sicronyze the database
-    app.listen(PORT, () => {
-      console.log(`Servidor rodando na porta ${PORT}`);
-    });
-  } catch (err) {
-    console.error('Erro ao conectar ao banco de dados:', err);
-  }
-};
-
-startServer();
-
-export default app;
+export default sequelize;
