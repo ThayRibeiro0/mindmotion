@@ -13,11 +13,11 @@
     "start": "node dist/index.js",
     "start:dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "test:db": "psql -U postgres -d mindmotion_db -c 'SELECT 1;'",
-    "build": "tsc", 
+    "build": "tsc",
     "build:client": "cd client && npm run build",
     "build:server": "cd server && npm run build",
-    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
-    "dev:server": "node --respawn --transpile-only server/src/index.ts",
+    "dev": "vite --port 3000",
+    "dev:server": "node server/src/index.ts",
     "dev:client": "cd client && npm run dev"
   },
   "repository": {
@@ -61,6 +61,7 @@
     "chart.js": "^4.4.8",
     "dotenv": "^16.4.7",
     "jsonwebtoken": "^9.0.2",
+    "node": "^23.11.0",
     "pg": "^8.14.1",
     "pg-hstore": "^2.3.4",
     "react": "^19.1.0",
