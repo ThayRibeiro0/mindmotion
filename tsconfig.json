@@ -32,8 +32,7 @@
     "esm": true
   },
   "include": [
-    "server/src/**/*",
-    "client/src/**/*"
+    ["src/**/*"]
   ],
   "exclude": ["node_modules"]
 }
