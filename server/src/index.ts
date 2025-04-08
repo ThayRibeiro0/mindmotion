@@ -5,7 +5,7 @@ import authRoutes from './routes/auth.js';
 import meditationRoutes from './routes/meditation.js';
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = parseInt(process.env.PORT || '5000', 10);
 
 app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.json());
@@ -20,7 +20,7 @@ const startServer = async () => {
     await sequelize.authenticate();
     console.log('Conexão com o banco de dados estabelecida com sucesso!');
     await sequelize.sync();
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
       console.log(`Servidor rodando na porta ${PORT}`);
     });
   } catch (err) {
