@@ -1,18 +1,29 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",   // Habilita JSX para React 17+
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "baseUrl": ".",
+    "paths": {
+      "@models/*": ["src/models/*"],
+      "@routes/*": ["src/routes/*"],
+      "@components/*": ["src/components/*"],
+      "@utils/*": ["src/utils/*"]
+    },
     "target": "ES2020",
     "lib": ["dom", "esnext"],
+    "jsx": "react",
+    "moduleResolution": "NodeNext",
     "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "useDefineForClassFields": true,
+    "module": "NodeNext",
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "allowSyntheticDefaultImports": true
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "typeRoots": ["./node_modules/@types", "./src/types"],
+  "references": []
 }
