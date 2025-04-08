@@ -8,18 +8,18 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(cors({ origin: "http://localhost:5173" }));
-app.use(express.json()); 
+app.use(express.json());
 
-// Routes to the application
+// Defina as rotas
 app.use('/api/auth', authRoutes);
 app.use('/api/meditation', meditationRoutes);
 
-// Initialize the database connection and start the server
+// Função para iniciar o servidor
 const startServer = async () => {
   try {
     await sequelize.authenticate();
     console.log('Conexão com o banco de dados estabelecida com sucesso!');
-    await sequelize.sync(); 
+    await sequelize.sync();
     app.listen(PORT, () => {
       console.log(`Servidor rodando na porta ${PORT}`);
     });
@@ -28,6 +28,4 @@ const startServer = async () => {
   }
 };
 
-startServer();
-
-export default app;
+export { app, startServer };
