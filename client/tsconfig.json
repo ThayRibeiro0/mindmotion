@@ -11,7 +11,7 @@
     "rootDir": "./",
     "target": "ES2020",
     "lib": ["dom", "esnext"],
-    "jsx": "react-jsx",
+    "jsx": "react",
     // "noUnusedLocals": false, 
     // "noUnusedParameters": false,
     "moduleResolution": "NodeNext",
