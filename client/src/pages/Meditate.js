@@ -1,7 +1,10 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import React from 'react';
 import BreathingTimer from '../components/BreathingTimer.js';
 import MoodSelector from '../components/MoodSelector.js';
 const Meditate = () => {
-    return (_jsxs("div", { children: [_jsx("h1", { children: "Meditate Page" }), _jsx(BreathingTimer, {}), _jsx(MoodSelector, {})] }));
+    return (React.createElement("div", null,
+        React.createElement("h1", null, "Meditate Page"),
+        React.createElement(BreathingTimer, null),
+        React.createElement(MoodSelector, null)));
 };
 export default Meditate;

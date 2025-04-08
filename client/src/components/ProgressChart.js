@@ -1,6 +1,6 @@
-import { jsx as _jsx } from "react/jsx-runtime";
 import("chart.js");
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement, Title, Tooltip, Legend } from 'chart.js';
+import React from 'react';
 import { Line } from 'react-chartjs-2';
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Title, Tooltip, Legend);
 const ProgressChart = ({ logs }) => {
@@ -16,6 +16,7 @@ const ProgressChart = ({ logs }) => {
             },
         ],
     };
-    return (_jsx("div", { className: "bg-white rounded p-4 shadow", children: _jsx(Line, { data: data }) }));
+    return (React.createElement("div", { className: "bg-white rounded p-4 shadow" },
+        React.createElement(Line, { data: data })));
 };
 export default ProgressChart;

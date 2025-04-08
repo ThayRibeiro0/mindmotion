@@ -1,5 +1,4 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 const BreathingTimer = () => {
     const [timeLeft, setTimeLeft] = useState(30);
     const [isActive, setIsActive] = useState(false);
@@ -25,6 +24,14 @@ const BreathingTimer = () => {
         setIsActive(false);
         setTimeLeft(30);
     };
-    return (_jsxs("div", { children: [_jsx("h2", { children: "Breathing Timer" }), timeLeft > 0 ? (_jsxs("p", { children: ["Time remaining: ", timeLeft, " seconds"] })) : (_jsx("p", { children: "Breathing exercise complete!" })), _jsxs("div", { children: [!isActive && timeLeft === 30 && (_jsx("button", { onClick: handleStart, children: "Start" })), (isActive || timeLeft < 30) && (_jsx("button", { onClick: handleReset, children: "Reset" }))] })] }));
+    return (React.createElement("div", null,
+        React.createElement("h2", null, "Breathing Timer"),
+        timeLeft > 0 ? (React.createElement("p", null,
+            "Time remaining: ",
+            timeLeft,
+            " seconds")) : (React.createElement("p", null, "Breathing exercise complete!")),
+        React.createElement("div", null,
+            !isActive && timeLeft === 30 && (React.createElement("button", { onClick: handleStart }, "Start")),
+            (isActive || timeLeft < 30) && (React.createElement("button", { onClick: handleReset }, "Reset")))));
 };
 export default BreathingTimer;
