@@ -1,6 +1,13 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom'; 
 
 const Home: React.FC = () => {
+  const navigate = useNavigate(); 
+
+  const handleGetStarted = () => {
+    navigate('/'); 
+  };
+
   return (
     <div className="home-container">
       {/* Seção de Hero */}
@@ -10,7 +17,7 @@ const Home: React.FC = () => {
           <p className="hero-description">
             Your journey to a calm and centered mind begins here
           </p>
-          <button className="cta-btn">Get Started</button>
+          <button className="cta-btn" onClick={handleGetStarted}>Get Started</button>
         </div>
       </section>
 
@@ -70,7 +77,7 @@ const Home: React.FC = () => {
       {/* Seção de Call to Action */}
       <section className="cta">
         <h2>Ready to Find Your Inner Peace?</h2>
-        <button className="cta-btn">Explore MindMotion Now</button>
+        <button className="cta-btn" onClick={handleGetStarted}>Explore MindMotion Now</button>
       </section>
     </div>
   );

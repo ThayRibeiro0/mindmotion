@@ -38,7 +38,7 @@
     "@types/node": "^22.14.0",
     "@types/react": "^19.1.0",
     "@types/react-chartjs-2": "^2.0.2",
-    "@types/react-dom": "^19.1.1",
+    "@types/react-dom": "^19.1.2",
     "@types/recharts": "^2.0.1",
     "@types/sequelize": "^4.28.20",
     "autoprefixer": "^10.4.21",
@@ -67,6 +67,7 @@
     "react": "^19.1.0",
     "react-chartjs-2": "^5.3.0",
     "react-dom": "^19.1.0",
+    "react-router-dom": "^7.5.0",
     "recharts": "^2.15.2",
     "sequelize": "^6.37.7"
   }

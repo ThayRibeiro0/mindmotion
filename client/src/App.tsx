@@ -1,20 +1,24 @@
 import React from 'react';
-import Home from './pages/Home.js';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PrivateRoute from './components/ProtectedRoute.js';
 import Header from './components/Header.js';
-// import Dashboard from './pages/Dashboard.js';
-// import Meditate from './pages/Meditate.js';
+import Home from './pages/Home.js';
+import Meditate from './pages/Meditate.js';
 import Contact from './pages/Contact.js';
+// import LoginPage from './pages/LoginPage';
 
 const App: React.FC = () => {
   return (
-    <>
+    <Router>
       <Header />
-      <Home />
-      {/* <Dashboard />
-      <Meditate /> */}
-      <Contact />
-    </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/meditate" element={<PrivateRoute><Meditate /></PrivateRoute>} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
