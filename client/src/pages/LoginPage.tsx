@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+<<<<<<< HEAD
 import { Link, useNavigate } from 'react-router-dom';
+=======
+import { useNavigate } from 'react-router-dom';
+>>>>>>> edc2f65e7ab5cdbb91f12e87bd7f29949f501f15
 
 // Step 1: Define the interface for the login response
 interface LoginResponse {

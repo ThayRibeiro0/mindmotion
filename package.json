@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "start": "node dist/index.js",
-    "start:dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "start:dev": "concurrently \"npm run t\" \"npm run dev:client\"",
     "test:db": "psql -U postgres -d mindmotion_db -c 'SELECT 1;'",
     "build": "tsc",
     "build:client": "cd client && npm run build",
@@ -41,6 +41,7 @@
     "@types/react-dom": "^19.1.2",
     "@types/recharts": "^2.0.1",
     "@types/sequelize": "^4.28.20",
+    "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.1.2",
     "jest": "^29.7.0",
