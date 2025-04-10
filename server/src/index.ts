@@ -8,11 +8,11 @@ import meditationRoutes from './routes/meditation.js';
 const app = express();
 const port = parseInt(process.env.PORT || '10000', 10); // Use the default Render port
 
-app.use(cors({ origin: "http://localhost:5173" })); // Adjust origin as needed for production
+app.use(cors({ origin: "https://mindmotion.onrender.com" })); // Adjust origin as needed for production
 app.use(express.json());
 
 // Serve static files from the 'public' directory
-app.use(express.static(path.join(process.cwd(), 'dist')));
+app.use(express.static(path.join(process.cwd(), 'build')));
 
 // Defina as rotas da API
 app.use('/api/auth', authRoutes);
@@ -20,7 +20,7 @@ app.use('/api/meditation', meditationRoutes);
 
 // Optional: Serve the index.html for all other routes to enable client-side routing
 app.get('*', (_req, res) => {
-  res.sendFile(path.join(process.cwd(), 'dist', 'index.html'));
+  res.sendFile(path.join(process.cwd(), 'build', 'index.html'));
 });
 
 // Função para iniciar o servidor

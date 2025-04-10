@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "../assets/pinch.png";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,9 +20,9 @@ const Header: React.FC = () => {
       </div>
 
       <nav className={`nav-links ${isMenuOpen ? "open" : ""}`}>
-        <a href="/home">Home</a>
-        <a href="/login">Login</a>
-        <a href="/contact">Contact</a>
+        <Link to="/home">Home</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/contact">Contact</Link>
       </nav>
 
       <div className="hamburger" onClick={toggleMenu}>
