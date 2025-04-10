@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // Step 1: Define the interface for the login response
 interface LoginResponse {
@@ -66,6 +66,9 @@ const LoginPage: React.FC = () => {
         </div>
         <button type="submit" style={{ padding: '0.5rem 1rem' }}>Login</button>
       </form>
+      <div className="register-link">
+        <p>Don't have an account? <Link to="/register">Register</Link></p>     
+      </div>
     </div>
   );
 };
