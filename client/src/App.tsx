@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import PrivateRoute from './components/ProtectedRoute.js';
+// import PrivateRoute from './components/ProtectedRoute.js';
 import Header from './components/Header.js';
 import Home from './pages/Home.js';
 import Meditate from './pages/Meditate.js';
@@ -14,15 +14,15 @@ const App: React.FC = () => {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/meditate" element={<Meditate />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="" element={<Home />} />
+        <Route path="home" element={<Home />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="meditate" element={<Meditate />} />
+        <Route path="dashboard" element={<Dashboard />} />
         {/* Protected Routes */}
-        <Route path="/meditate" element={<PrivateRoute><Meditate /></PrivateRoute>} />
+        {/* <Route path="meditate" element={<PrivateRoute><Meditate /></PrivateRoute>} /> */}
       </Routes>
     </Router>
   );
