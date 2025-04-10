@@ -32,6 +32,16 @@ interface ForismaticResponse {
   quoteLink: string;
 }
 
+interface FreesoundResponse {
+  results: {
+    id: number;
+    name: string;
+    user: {
+      username: string;
+    };
+  }[];
+}
+
 declare global {
   interface Window {
     processJSON?: (data: { quoteText: string; quoteAuthor: string; quoteLink: string }) => void;
@@ -85,32 +95,39 @@ const Dashboard = () => {
 
     fetchQuote();
 
-    axios.get<Stats>('/api/meditations/dashboard-stats')
+    const fetchStats = () => {
+      axios.get<Stats>(`${import.meta.env.VITE_API_URL}/api/meditations/dashboard-stats`, {
+        headers: {
+          'Authorization': `Bearer ${import.meta.env.API_KEY}`,
+        },
+      })
       .then(res => {
         setStats(res.data);
       })
       .catch(error => console.error("Error fetching dashboard stats:", error));
+    };
+
+    fetchStats();
 
     const fetchFreesoundRecommendations = async () => {
       if (freesoundApiKey) {
         try {
-          const ambientResponse = await axios.get(
+          const ambientResponse = await axios.get<FreesoundResponse>(
             `https://freesound.org/apiv2/search/text/?query=ambient%20meditation&token=${freesoundApiKey}`
           );
-          const natureResponse = await axios.get(
+          const natureResponse = await axios.get<FreesoundResponse>(
             `https://freesound.org/apiv2/search/text/?query=nature%20meditation&token=${freesoundApiKey}`
           );
+
           const newRecommendations: SoundRecommendation[] = [
-            ...(Array.isArray((ambientResponse.data as { results: { name: string; user: { username: string }; id: number }[] }).results) 
-              ? (ambientResponse.data as { results: { name: string; user: { username: string }; id: number }[] }).results 
-              : []).slice(0, 2).map((sound) => ({
+            ...(ambientResponse.data.results.slice(0, 2).map((sound) => ({
               name: sound.name,
-              source: `https://freesound.org/people/${sound.user.username}/sounds/${sound.id}/`, // Example link
-            })),
-            ...(Array.isArray((natureResponse.data as { results: any[] }).results) ? (natureResponse.data as { results: any[] }).results : []).slice(0, 2).map((sound: any) => ({
+              source: `https://freesound.org/people/${sound.user.username}/sounds/${sound.id}/`,
+            }))),
+            ...(natureResponse.data.results.slice(0, 2).map((sound) => ({
               name: sound.name,
-              source: `https://freesound.org/people/${sound.user.username}/sounds/${sound.id}/`, // Example link
-            })),
+              source: `https://freesound.org/people/${sound.user.username}/sounds/${sound.id}/`,
+            }))),
           ];
           setSoundRecommendations(newRecommendations);
         } catch (error) {
@@ -214,15 +231,10 @@ const Dashboard = () => {
               {soundRecommendations.map((recommendation, index) => (
                 <li key={index} className="sound-recommendation-item">
                   <span className="sound-name">{recommendation.name}</span>
-                  {/* You would need to implement audio playback using the recommendation.source */}
-                  {recommendation.source.startsWith('/') || recommendation.source.startsWith('http') ? (
-                    <audio controls src={recommendation.source}>
-                      Your browser does not support the
-                      <code>audio</code> element.
-                    </audio>
-                  ) : (
-                    <a href={recommendation.source} target="_blank" rel="noopener noreferrer">View on Freesound</a>
-                  )}
+                  <audio controls src={recommendation.source}>
+                    Your browser does not support the
+                    <code>audio</code> element.
+                  </audio>
                 </li>
               ))}
             </ul>
@@ -251,22 +263,17 @@ const Dashboard = () => {
             </div>
             <div className="calendar-grid">
               {daysOfWeek.map((day) => (
-                <div key={day} className="calendar-day-label">{day}</div>
+                <div key={day} className="calendar-day">{day}</div>
               ))}
-              {Array(firstDayOfMonth)
-                .fill(null)
-                .map((_, index) => (
-                  <div key={`empty-${index}`} className="calendar-day empty"></div>
-                ))}
-              {Array.from({ length: daysInMonth }, (_, day) => (
-                <div key={day + 1} className="calendar-day">
-                  {day + 1}
-                </div>
+              {Array.from({ length: firstDayOfMonth }).map((_, i) => (
+                <div key={`empty-${i}`} className="calendar-day empty"></div>
+              ))}
+              {Array.from({ length: daysInMonth }).map((_, i) => (
+                <div key={i} className="calendar-day">{i + 1}</div>
               ))}
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

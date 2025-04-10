@@ -8,7 +8,7 @@ import meditationRoutes from './routes/meditation.js';
 const app = express();
 const port = parseInt(process.env.PORT || '10000', 10); // Use the default Render port
 
-app.use(cors({ origin: "https://mindmotion.onrender.com" })); // Adjust origin as needed for production
+app.use(cors()); // Adjust origin as needed for production
 app.use(express.json());
 
 // Serve static files from the 'public' directory
