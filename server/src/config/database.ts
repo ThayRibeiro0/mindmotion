@@ -3,14 +3,18 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const sequelize = new Sequelize(
-  process.env.DB_NAME || 'mindmotion_db_yyzk', 
-  process.env.DB_USER || 'mindmotion_db_yyzk_user',
-  process.env.DB_PASS || 'HigiQDsGR9zLT1I7lw7yQbMXChrQgBjY',
+  process.env.DB_NAME || '',
+  process.env.DB_USER || '',
+  process.env.DB_PASS || '',
   {
-    host: process.env.DB_HOST || 'dpg-cvqo35emcj7s73fctdag-a',
+    host: process.env.DB_HOST || 'localhost',
     port: process.env.DB_PORT ? parseInt(process.env.DB_PORT, 10) : 5432,
     dialect: 'postgres',
   }
 );
+
+sequelize.authenticate()
+  .then(() => console.log('✅ Database connected successfully.'))
+  .catch(err => console.error('❌ Unable to connect to the database:', err));
 
 export default sequelize;

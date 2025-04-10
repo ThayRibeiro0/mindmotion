@@ -1,11 +1,11 @@
 import express from 'express';
-import User  from '../models/User.js';
+import User from '../models/User.js';
 import jwt from 'jsonwebtoken';
 
 const router = express.Router();
 
 // Route of Signup
-router.post('/signup', async (req: express.Request, res: express.Response): Promise<void> => {
+router.post('/register', async (req: express.Request, res: express.Response): Promise<void> => {
   try {
     const { username, email, password } = req.body;
 
@@ -32,33 +32,22 @@ router.post('/login',  async (req: express.Request, res: express.Response): Prom
 
     // Verify if the user exists
     const user = await User.findOne({ where: { email } });
-    if (!user) {
-      res.status(400).json({ message: 'Usuário não encontrado!' });
-    }
-
+    
     // Verify if the user has the method comparePassword
     if (!user || typeof user.comparePassword !== 'function') {
-      res.status(400).json({ message: 'Usuário ou método inválido!' });
+      res.status(400).json({ message: 'Usuário ou senha inválidos!' });
+      return;
     }
 
     // Compare the password
-    if (!user) {
-      res.status(400).json({ message: 'Usuário não encontrado!' });
-      return;
-    }
-
-    if (typeof user.comparePassword !== 'function') {
-      res.status(400).json({ message: 'Método comparePassword não definido!' });
-      return;
-    }
-
     const isMatch = await user.comparePassword(password);
     if (!isMatch) {
       res.status(400).json({ message: 'Senha incorreta!' });
+      return;
     }
 
     // Create a JWT token
-    const token = jwt.sign({ userId: user.id }, 'your-secret-key', {
+    const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET!, {
       expiresIn: '1h',
     });
 

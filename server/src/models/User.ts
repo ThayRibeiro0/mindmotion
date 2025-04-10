@@ -9,21 +9,6 @@ interface UserAttributes {
   password: string;
 }
 
-interface DataTypes {
-  STRING: string;
-}
-
-sequelize.define('model', {
-  column: DataTypes.INTEGER
-})
-
-sequelize.define('model', {
-  uuid: {
-    type: DataTypes.UUID,
-    defaultValue: DataTypes.UUIDV1,
-    primaryKey: true
-  }
-}) 
 interface UserCreationAttributes extends Optional<UserAttributes, 'id'> {}
 
 class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
@@ -65,9 +50,17 @@ User.init({
 });
 
 // Método para criptografar a senha antes de salvar o usuário
-User.beforeCreate(async (user) => {
+User.beforeCreate(async (user: User) => {
   const salt = await bcrypt.genSalt(10);
   user.password = await bcrypt.hash(user.password, salt);
+});
+
+// Método para rehash a senha antes de atualizar o usuário
+User.beforeUpdate(async (user: User) => {
+  if (user.changed('password')) {
+    const salt = await bcrypt.genSalt(10);
+    user.password = await bcrypt.hash(user.password, salt);
+  }
 });
 
 export default User;

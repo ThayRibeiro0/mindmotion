@@ -22,10 +22,10 @@ const RegisterPage: React.FC = () => {
       // Use response (for example, log it)
       console.log('Registration response:', response.data);
       
-      setSuccessMessage('Registration successful! Please log in.');
-      
-      // Use navigate to redirect to the login page.
-      navigate('/login');
+      setSuccessMessage('Registration successful! Redirecting to dashboard...');
+      // Optionally store user data in localStorage or context here
+      //localStorage.setItem('token', response.data.token);
+      navigate('/dashboard');
     } catch (error: any) {
       console.error('Registration error:', error);
       setErrorMessage('Registration failed. Please try again.');
