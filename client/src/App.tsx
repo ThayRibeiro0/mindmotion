@@ -5,7 +5,7 @@ import Header from './components/Header.js';
 import Home from './pages/Home.js';
 import Meditate from './pages/Meditate.js';
 import Contact from './pages/Contact.js';
-// import LoginPage from './pages/LoginPage';
+import LoginPage from './pages/LoginPage.js';
 
 const App: React.FC = () => {
   return (
@@ -14,8 +14,9 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/meditate" element={<PrivateRoute><Meditate /></PrivateRoute>} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/meditate" element={<PrivateRoute><Meditate /></PrivateRoute>} />
       </Routes>
     </Router>
   );
