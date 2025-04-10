@@ -1,40 +1,56 @@
-## Mindmotion
+# 🧘‍♀️ MindMotion
 
-Mindmotion is a web application that allows you to track your moods and emotions. It provides a simple and intuitive interface for managing your mental health and well-being.
+MindMotion is a full-stack web application designed to help users track their moods and emotions, promoting mental well-being through insights, analysis, and a polished, responsive user experience.
 
-## Features
+## 🌟 Table of Contents
 
-- User registration and login system
-- Mood tracking and analysis
-- Mood insights and recommendations
-- Integration with external APIs
-- Customizable themes and layouts
-- Mobile responsiveness
-- Accessibility and usability
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Build the Project](#build-the-project)
+- [Deployment](#deployment)
+- [Technologies Used](#technologies-used)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Getting Started
+## 🧠 Description
 
-To get started with Mindmotion, follow these steps:
+MindMotion allows users to:
 
-1. Clone the repository:
+- Register and log in securely using JWT-based authentication
+- Track daily moods and emotions through a clean and intuitive interface
+- Receive visual insights and wellness suggestions based on tracked data
+- Interact with external APIs for potential mental health resources
+- Enjoy a responsive layout across all screen sizes
+- Customize visual themes and layouts (future enhancement)
+- Navigate an accessible and user-friendly experience
+
+## 📥 Installation
+
+### Clone the Repository
 
 ```bash
 git clone https://github.com/thaysmoiaribeiro/mindmotion.git
 ```
 
-2. Navigate to the project directory:
+### Navigate to Project
 
-```bash
+```
 cd mindmotion
 ```
 
-3. Install the project dependencies:
+### Install Dependencies
 
-```bash
+```
 npm install
 ```
 
-4. Create a .env file in the root directory and add the following variables:
+### Create .env File
+
+In the root directory, create a .env file and include the following environment variables:
+
+.env server
 
 ```bash
 PORT=PORT
@@ -47,16 +63,78 @@ JWT_SECRET=JWT_SECRET
 EXTERNAL_API_KEY=EXTERNAL_API_KEY
 ```
 
-5.  Run the project:
-
+.env client
 ```bash
-npm run dev
+API_KEY=API_KEY 
+VITE_API_URL=VITE_API_URL
 ```
 
-## Contributing
+⚠*️ Never commit .env files to version control.*
 
-Contributions are welcome! If you find a bug or have a suggestion, please open an issue or submit a pull request.
+## 🚀 Usage
 
-## License
+### Run the App Locally
+To start the development server for both client and server, run:
 
-This project is licensed under the MIT License. See the LICENSE file for more information.      
+Start postgres database and one terminal:
+
+MAC:
+```
+brew install postgresql
+brew services start postgresql
+psql -U postgres
+\password postgres
+\q
+```
+
+And the other terminal run:
+```
+npm run start:dev
+```
+
+### 📦 Build the Project
+To create an optimized production build for the front-end, run:
+
+```
+bash
+npm run build
+```
+
+## ⚙️ Deployment
+MindMotion is fully deployed and live: https://mindmotion.onrender.com
+
+- Frontend (React): Hosted on Render
+- Backend (Node/Express + PostgreSQL): Hosted on Render
+
+### To deploy your own version
+
+- Push to GitHub
+- Connect the repo to Render
+- Set build/start commands appropriately for both front-end and back-end
+
+### 💻 Technologies Used
+
+- Frontend: React.js, CSS (custom), React Router
+- Backend: Node.js, Express.js
+- Database: PostgreSQL with Sequelize ORM
+- Authentication: JSON Web Token (JWT)
+- APIs: Internal + external APIs for future integrations
+- Deployment: Render
+- Tooling: Vite, nodemon, concurrently, dotenv
+
+### 📸 Screenshots
+
+<div>
+  <img src="./client/src/screenshots/MindMotionHomePage.png" alt="MindMotion_Home_Page" width="600" height="300">
+</div>
+
+
+## 🤝 Contributing
+Contributions are welcome!
+If you find a bug or have a feature suggestion, feel free to open an issue or submit a pull request.
+
+## 📜 License
+This project is licensed under the MIT License.
+See the LICENSE file for more details.
+
+✨ Made with mindfulness by @johnwgomez and @thaysmoiaribeiro
