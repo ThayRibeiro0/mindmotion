@@ -12,7 +12,7 @@ app.use(cors({ origin: "http://localhost:5173" })); // Adjust origin as needed f
 app.use(express.json());
 
 // Serve static files from the 'public' directory
-app.use(express.static(path.join(process.cwd(), 'public')));
+app.use(express.static(path.join(process.cwd(), 'dist')));
 
 // Defina as rotas da API
 app.use('/api/auth', authRoutes);
@@ -20,7 +20,7 @@ app.use('/api/meditation', meditationRoutes);
 
 // Optional: Serve the index.html for all other routes to enable client-side routing
 app.get('*', (_req, res) => {
-  res.sendFile(path.join(process.cwd(), 'public', 'index.html'));
+  res.sendFile(path.join(process.cwd(), 'dist', 'index.html'));
 });
 
 // Função para iniciar o servidor
