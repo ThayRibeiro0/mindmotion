@@ -58,7 +58,7 @@ const Dashboard = () => {
   ]);
   const [currentDate, setCurrentDate] = useState(new Date());
   const quoteApiUrl = 'http://api.forismatic.com/api/1.0/';
-  const freesoundApiKey = 'we6M94tIgOPURp3Xdlu9kTSU3NbKDWKRPrzUjeS2'; // Replace with your actual API key
+  const freesoundApiKey = 'API_KEY';
 
   useEffect(() => {
     const fetchQuote = () => {
