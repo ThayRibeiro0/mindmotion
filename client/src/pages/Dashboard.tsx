@@ -41,7 +41,7 @@ declare global {
 const Dashboard = () => {
   const [quote, setQuote] = useState<ForismaticResponse | null>(null);
   const [stats, setStats] = useState<Stats | null>(null);
-  const [userInfo, setUserInfo] = useState<UserInfo>({
+  const [userInfo] = useState<UserInfo>({
     name: 'Adeline Watson',
     id: 'ID: 1890274',
     age: 24,
