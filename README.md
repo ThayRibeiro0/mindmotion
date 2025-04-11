@@ -44,6 +44,15 @@ cd mindmotion
 
 ```
 npm install
+
+cd server
+npm install cors
+npm install
+
+cd ../client
+npm install @vitejs/plugin-react
+npm install
+
 ```
 
 ### Create .env File
